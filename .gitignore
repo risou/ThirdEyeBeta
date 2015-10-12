@@ -13,3 +13,4 @@
 /tmp
 /vendor/bundle
 /bundle_bin
+/config/settings.yml
