@@ -1,6 +1,8 @@
 class HomeController < BaseController
+  include TwitterClient
+
   def index
-    @tweets = client.home_timeline
+    @tweets = HomeController.client.home_timeline
     
     # client = TweetStream::Client.new
     # client.userstream do |status|
