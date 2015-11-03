@@ -1,5 +1,10 @@
 class TwitterController < ApplicationController
-  class << self
-    attr_accessor :client
+  include TwitterClient
+
+  def fav
+    if request.xml_http_request?
+      p params[:id]
+      # TwitterController.client.favorite()
+    end
   end
 end

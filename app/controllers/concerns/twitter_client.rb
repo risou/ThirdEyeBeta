@@ -1,7 +1,7 @@
 module TwitterClient
   extend ActiveSupport::Concern
   
-  module ClassMethods
+  class_methods do
     def client
       @client ||= Twitter::REST::Client.new do |config|
         config.consumer_key = Settings.twitter.consumer_key
