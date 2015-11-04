@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   #   end
   root 'home#index'
   get 'home/index'
-  post 'twitter/fav'
+  get 'twitter/fav'
   get '/auth/:provider/callback', :to => 'sessions#callback'
   post '/auth/:provider/callback', :to => 'sessions#callback'
   get '/logout' => 'sessions#destroy', :as => :logout

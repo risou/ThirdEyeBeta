@@ -2,14 +2,6 @@
 <p>Find me in app/views/home/index.html.erb</p>
 <% @tweets.each do |tweet| %>
   <%= tweet.user.name %>&nbsp;<%= tweet.text %>&nbsp;
-  <%= form_tag(
-    {
-      :controller => "twitter",
-      :action => "fav",
-    },
-    :remote => true
-  ) do %>
-  <%= submit_tag('fav') %>
-  <% end %>
+  <%= link_to "fav", :controller => "twitter", :action => "fav", :remote => true %>
   <br>
 <% end %>
