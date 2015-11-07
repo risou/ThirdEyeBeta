@@ -3,5 +3,6 @@
 <% @tweets.each do |tweet| %>
   <%= tweet.user.name %>&nbsp;<%= tweet.text %>&nbsp;
   <%= link_to "fav", :controller => "twitter", :action => "fav", :id => tweet.id, :remote => true %>
+  <%= link_to "status", :controller => "twitter", :action => "status", :id => tweet.id, :remote => true %>
   <br>
 <% end %>
