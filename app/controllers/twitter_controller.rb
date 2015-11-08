@@ -16,4 +16,5 @@ class TwitterController < ApplicationController
   
   def status
     p TwitterController.client.status(params[:id])
+  end
 end
