@@ -2,7 +2,11 @@
 <p>Find me in app/views/home/index.html.erb</p>
 <% @tweets.each do |tweet| %>
   <%= tweet.user.name %>&nbsp;<%= tweet.text %>&nbsp;
+  <% if favorited? tweet.id %>
+  <%= link_to "unfav", :controller => "twitter", :action => "unfav", :id => tweet.id, :remote => true %>
+  <% else %>
   <%= link_to "fav", :controller => "twitter", :action => "fav", :id => tweet.id, :remote => true %>
+  <% end %>
   <%= link_to "status", :controller => "twitter", :action => "status", :id => tweet.id, :remote => true %>
   <br>
 <% end %>

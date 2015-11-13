@@ -1,12 +1,13 @@
 class HomeController < BaseController
   include TwitterClient
+  helper_method :favorited?
 
   def index
     @tweets = HomeController.client.home_timeline
-    
-    # client = TweetStream::Client.new
-    # client.userstream do |status|
-    #   puts "#{status.user.name}: #{status.text}"
-    # end
+  end
+
+  private
+  def favorited?(id)
+    HomeController.client.status(id).favorited?
   end
 end

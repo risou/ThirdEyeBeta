@@ -16,5 +16,6 @@ class TwitterController < ApplicationController
   
   def status
     p TwitterController.client.status(params[:id])
+    p TwitterController.client.status(params[:id]).favorited?
   end
 end
