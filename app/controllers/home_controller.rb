@@ -3,6 +3,7 @@ class HomeController < BaseController
   helper_method :favorited?
 
   def index
+    login_required
     @tweets = HomeController.client.home_timeline
   end
 
