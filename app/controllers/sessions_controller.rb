@@ -8,6 +8,6 @@ class SessionsController < ApplicationController
   
   def destroy
     session[:session_id] = nil
-    redirect_to root_path
+    redirect_to :controller => 'home', :action => 'login'
   end
 end

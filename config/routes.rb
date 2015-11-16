@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   #   end
   root 'home#index'
   get 'home/index'
+  get 'home/login'
   get 'twitter/fav'
   get 'twitter/unfav'
   get 'twitter/status'
