@@ -8,6 +8,11 @@ class HomeController < BaseController
   end
 
   def login
+    return redirect_to :controller => 'home', :action => 'index' if current_user
+
+    respond_to do |format|
+      format.html { render :layout => nil }
+    end
   end
 
   private
