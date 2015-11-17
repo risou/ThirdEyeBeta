@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    session[:session_id] = nil
+    reset_session
     redirect_to :controller => 'home', :action => 'login'
   end
 end
