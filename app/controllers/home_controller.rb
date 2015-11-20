@@ -4,7 +4,13 @@ class HomeController < BaseController
 
   def index
     login_required
-    @tweets = HomeController.client.home_timeline
+    # @tweets = HomeController.client.home_timeline
+    @tweets = []
+    HomeController.stream.userstream do |status|
+      if status.is_a?(Twitter::Tweet)
+        tweets.push ["user" => ["name" => status.user.name], "text" => status.text, "id" => status.id]
+      end
+    end
   end
 
   def login
